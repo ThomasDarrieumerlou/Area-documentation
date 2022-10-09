@@ -3,32 +3,28 @@ Usage
 
 .. _installation:
 
-Installation
+Set Up Data base
 ------------
 
-To use Lumache, first install it using pip:
+Make sure that the area user has all permissions over the Area database and that the database exists.
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   (.venv) $ cat area.sql | mysql -u area -p Area
 
-Creating recipes
+Sart Project
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+To start the server use :
 
-.. autofunction:: lumache.get_random_ingredients
+.. code-block:: console
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
+   (.venv) $ make run t=server
 
-.. autoexception:: lumache.InvalidKindError
+To start the web client use :
 
-For example:
+.. code-block:: console
 
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+   (.venv) $ make run t=web
 
+To use the mobile client download the apk.
