@@ -12,7 +12,7 @@ Make sure that the area user has all permissions over the Area database and that
 
    (.venv) $ cat area.sql | mysql -u area -p Area
 
-Sart Project
+Start Project
 ----------------
 
 To start the server use :
