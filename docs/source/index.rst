@@ -4,7 +4,7 @@ Welcome to AREA's documentation!
 **Area**
 
 Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project and launch the start :ref:`installation`.
+how to :ref:`installation` the project and launch the start :ref:`start`.
 
 .. note::
 
