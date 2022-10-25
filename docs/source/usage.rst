@@ -4,7 +4,7 @@ Usage
 .. _installation:
 
 Set Up Data base
-------------
+-----------------
 
 Make sure that the area user has all permissions over the Area database and that the database exists.
 
@@ -28,3 +28,10 @@ To start the web client use :
    (.venv) $ make run t=web
 
 To use the mobile client download the apk.
+
+
+start Docker
+-------------
+
+To start the project we use containerisation software.
+It is called Docker and its purpose is to compile our project on a container.
