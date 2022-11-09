@@ -1,18 +1,18 @@
 Details
 ========
 
-Le projet est composer de plusieurs partie utile au bon fonctionnement du projet.
+The project is composed of several parts useful for the good functioning of the project.
 
 Authentification
 -----------------
 
-Nous avons mis en place un system d'Authentification sur notre projet.
-Pour ce faire la personne doit renseigner uniquement un Username et un password associer.
+We have set up an authentication system on our project.
+To do so, the person must only fill in a username and a password.
 
-C'est information sont stocker dans la base de donner et chaque utilisateur est associer à un token.
+This information is stored in the database and each user is associated with a token.
 
 
-cela permet de personnaliser les action selon l'utilisteur.
+This allows us to customize the actions according to the user.
 
 
 .. _service:
@@ -27,32 +27,32 @@ Services
 Action 
 -------
 
-L'une des composantes les plus importante du projet sont les Actions.
-cette dernière est une taches réaliser sur un service suivant des instruction déterminer en amont.
+One of the most important components of the project is the Actions.
+The latter is a task carried out on a service according to instructions determined upstream.
 
-Voici un diagramme explicant de façons large le fonctionnement :
+Here is a diagram explaining in a broad way the functioning:
 
 .. image:: images/action.png
     :width: 400
 
 
-Pour ce faire une connection au service est necessaire pour le fonctionnement voir ci-joint pour plus d'information: :ref:`service`
+To do this a connection to the service is required for operation see attached for more information: :ref:`service`
 
-quelque point clés pour comprendre le composant.
+Some key points to understand the component.
 
-Tous d'abord le composant Action est lier a un trigger définie en amont pour guider l'action a faire.
-sans un trigger il ne serai pas quoi faire.
+First of all the Action component is linked to a trigger defined upstream to guide the action to be taken.
+Without a trigger it wouldn't know what to do.
 
-Donc des trigger on été définie pour chaque action et reaction.
-Un exemple de trigger :
+So triggers have been defined for each action and reaction.
+An example of a trigger :
     
-    Connection au gmail
+    Connection to gmail
     
-    check tous les x temps si nous avons reçus un mail
+    check every x time if we have received a mail
     
-    stockage des information du mail.
+    storage of the mail information.
 
-pour manager tous les services nous utilision un call de variable
+To manage all services we use a variable call
 
 .. code-block:: go
 
@@ -60,7 +60,7 @@ pour manager tous les services nous utilision un call de variable
     var Google = google.New()
     var Microsoft = Microsoft.New()
 
-Par exmple pour la connection à google on va demander un Authentification au service
+For example for the connection to google we will ask for an authentication to the service
 
 .. code-block:: go
 
@@ -84,9 +84,9 @@ Par exmple pour la connection à google on va demander un Authentification au se
 	return conf.AuthCodeURL(str, oauth2.AccessTypeOffline, oauth2.ApprovalForce)
     }
 
-on récupèr donc l'id et le secret du client pour pouvoir ensuite intéragir avec le service google pour l'action.
+we recover the id and the secret of the client to be able to interact with the google service for the action.
 
-Lorsque l'accés au service est bon on va lui demander de faire une action qu'on a définie comme ci-dessous :abbr:
+When the access to the service is good, we will ask it to do an action that we have defined as follows:
 
 .. code-block:: go
     
@@ -104,10 +104,10 @@ Lorsque l'accés au service est bon on va lui demander de faire une action qu'on
 	return false
     }
 
-Dans notre cas on peux observer qu'on effectue des tache vis a vis de l'envoie et la reception de mail.
-pour réaliser une reaction en fonction de cette action nous allons par exemple stocker les informations du mail
+In our case, we can observe that we perform tasks regarding the sending and receiving of mail.
+to realize a reaction according to this action we will for example store the information of the mail
 
-donc nous allons récuperer les info 
+so we will get the information 
 
 .. code-block:: go
     
@@ -124,26 +124,26 @@ donc nous allons récuperer les info
 	return res2
     }   
 
-cette action est réaliser nous allons passer donc au reaction.
+This action has been completed, so let's move on to the reaction.
 
 .. _reaction:
 
 Reaction
 ---------
 
-La reaction est la suite d'une action que nous avons effectuer en amont.
-Par exemple ql'action reaction qui est de checker si un mail à ete envoyer puis nous envoyer un message sur discord
+The reaction is the continuation of an action that we have carried out upstream.
+For example, the reaction action is to check if a mail has been sent and then send us a message on discord
 
-pour comprendre la logique voici un diagramme :
+To understand the logic here is a diagram:
 
 .. image:: images/réaction.png
     :width: 400
 
 
-Nous avons vue en amont le check de reception de mail sur gmail.
+We have seen before the mail reception check on gmail.
 
-Maintenant la reaction de cette action sur discord. Pour ce faire il faut c'authentifier sur discord
-puis effectuer l'action "send". cela ce traduit comme ceci :
+Now the reaction of this action on discord. To do this you need to authenticate on discord
+and then perform the "send" action. This translates like this:
 
 .. code-block:: go
 
@@ -159,12 +159,12 @@ puis effectuer l'action "send". cela ce traduit comme ceci :
 	case "send":
 		sendMessage(storedData, trigger.Action, trigger.ActionService)
 	}
-    }
 
-Dans ce cas on lui donne l'instruction d'envoyer un message sur discord.
-pour ce faire dans le cas de discord nous avons l'authorisation d'utiliser un webhook. si non cela n'est pas authoriser.
 
-donc voici l'exemple avec un webhook :
+In this case we give him the instruction to send a message to discord.
+to do this in the case of discord we are allowed to use a webhook. if not it is not allowed.
+
+so here is the example with a webhook :
 
 .. code-block:: go
 
@@ -201,7 +201,7 @@ donc voici l'exemple avec un webhook :
 }
 
 
-Mais dans une grand majoriter par exemple pour .... nous faisons comme ci-dessous :
+But in a large majority for example for .... we do as below:
 
 .. code-block:: go
     

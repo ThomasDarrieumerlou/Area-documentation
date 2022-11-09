@@ -7,21 +7,21 @@ API
 
 
 
-Le principe du projet Area est de réaliser des action et reaction sur des services choisie.
-Pour ce faire nous avons selectionner certain api qui sont répértorier ci-dessous.
+The principle of the Area project is to perform actions and reactions on selected services.
+To do this we have selected some api which are listed below.
 
 Google
 ------
 .. image:: images/image-api-google.png
    :width: 200
 
-Par le biais de cette api nous effectuons deux types de taches :
+Through this api we perform two types of tasks:
 
 ACTION :
-   Envoie de mail depuis la boite mail gmail.
+   Sending mail from the gmail mailbox.
 
 REACTION :
-   Peut nous avertir de la reception d'un mail sur la boite mail Gmail
+   Can notify us of the reception of a mail on the Gmail mailbox
 
 
 Outlouk
@@ -31,13 +31,13 @@ Outlouk
    :width: 100
 
 
-Deux types de taches sont prise en charge.
+Two types of tasks are undertaken.
 
 ACTION :
-   Envoie de mail depuis la boite mail outlouk.
+   Sending mail from the outlouk mailbox.
 
 REACTION :
-   Peut nous avertir de la reception d'un mail sur la boite mail Gmail
+   Can notify us of the reception of a mail on the Gmail mailbox
 
 
 Discord
@@ -48,16 +48,29 @@ Discord
 
 
 REACTION:
-   Envoie de message sur discord correspondant aux infos recuperées.
+   Sending a message on discord corresponding to the information collected.
 
 
 Notion
 -------
 
 
+
 github
 -------
 
 
+
+
 Timer
 ------
+
+.. image:: images/timer-api.png
+   :width: 100
+
+
+
+Action :
+   Recovery x times all times of the hour
+   Retrieve every day at x time
+   Retrieve the information at a defined date.
