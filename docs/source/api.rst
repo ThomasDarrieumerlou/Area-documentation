@@ -18,10 +18,10 @@ Google
 Through this api we perform two types of tasks:
 
 ACTION :
-   Sending mail from the gmail mailbox.
+   - Sending mail from the gmail mailbox.
 
 REACTION :
-   Can notify us of the reception of a mail on the Gmail mailbox
+   - Can notify us of the reception of a mail on the Gmail mailbox
 
 
 Outlouk
@@ -34,10 +34,10 @@ Outlouk
 Two types of tasks are undertaken.
 
 ACTION :
-   Sending mail from the outlouk mailbox.
+   - Sending mail from the outlouk mailbox.
 
 REACTION :
-   Can notify us of the reception of a mail on the Gmail mailbox
+   - Can notify us of the reception of a mail on the Gmail mailbox
 
 
 Discord
@@ -48,18 +48,32 @@ Discord
 
 
 REACTION:
-   Sending a message on discord corresponding to the information collected.
+   - Sending a message on discord corresponding to the information collected.
 
 
 Notion
 -------
 
+.. image:: images/notion-api.png
+   :width: 100
 
+REACTION:
+   - Add new line
+   
+   - Add new comment
 
 github
 -------
 
+.. image:: images/github-logo.png
+   :width: 100
 
+REACTION:
+   - Issue github
+
+   - Pull request
+
+   - New issue
 
 
 Timer
@@ -71,6 +85,8 @@ Timer
 
 
 Action :
-   Recovery x times all times of the hour
-   Retrieve every day at x time
-   Retrieve the information at a defined date.
+   - Recovery x times all times of the hour
+   
+   - Retrieve every day at x time
+   
+   - Retrieve the information at a defined date.
